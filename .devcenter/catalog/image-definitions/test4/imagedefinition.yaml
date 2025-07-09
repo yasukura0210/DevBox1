@@ -28,7 +28,7 @@ tasks:
       package: Google.Chrome
   - name: powershell
     description: Install Japanese Language Pack
-    timeout: 1800
+    timeout: 3600
     parameters:
       command: "Install-Language ja-JP -CopyToSettings"      
   - name: powershell
