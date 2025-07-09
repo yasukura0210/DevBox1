@@ -1,0 +1,77 @@
+$schema: "1.0"
+name: "development-environment-custom3"
+image: microsoftvisualstudio_visualstudioplustools_vs-2022-ent-general-win11-m365-gen2
+tasks:
+  - name: winget
+    description: Install .NET SDK 8
+    parameters:
+      package: Microsoft.DotNet.SDK.8
+#  - name: winget
+#    description: Install GitHub CLI
+#    parameters:
+#      package: GitHub.cli
+  - name: winget
+    description: Install Azure CLI
+    parameters:
+      package: Microsoft.AzureCLI
+  - name: winget
+    description: Install Python 3.12
+    parameters:
+      package: Python.Python.3.12
+  - name: winget
+    description: Install 7-Zip
+    parameters:
+      package: 7zip.7zip
+  - name: winget
+    description: Install Google Chrome
+    parameters:
+      package: Google.Chrome
+  - name: powershell
+    description: 時刻・日付などの表示形式が言語リストに追従するよう設定
+    parameters:
+      command: 'Set-WinCultureFromLanguageListOptOut -OptOut $False'
+  - name: powershell
+    description: デフォルトの入力方法を日本語IMEに変更
+    parameters:
+      command: 'Set-WinDefaultInputMethodOverride -InputTip "0411:00000411"'
+  - name: powershell
+    description: システムロケールを日本 (ja-JP) に設定
+    parameters:
+      command: 'Set-WinSystemLocale -SystemLocale ja-JP'
+  - name: powershell
+    description: ようこそ画面と新規ユーザーアカウントにも現在の国際設定をコピー
+    parameters:
+      command: 'Copy-UserInternationalSettingsToSystem -WelcomeScreen $True -NewUser $True'
+  - name: powershell
+    description: タイムゾーンを日本標準時(東京)に設定
+    parameters:
+      command: 'Set-TimeZone -Id "Tokyo Standard Time"'
+
+#  - name: powershell
+#    description: Install Japanese Language Pack
+#    parameters:
+#      command: "Install-Language ja-JP -CopyToSettings"
+#  - name: powershell
+#    description: Configure Japanese Language and UI Settings
+#    parameters:
+#      command: "Set-WinUILanguageOverride -Language ja-JP; Set-WinUserLanguageList - LanguageList ja-JP -Force; Set-SystemPreferredUILanguage -Language ja-JP"
+#  - name: powershell
+#    description: Configure Language list as Japanese
+#    parameters:
+#      command: "Set-WinUserLanguageList -LanguageList ja-JP -Force"
+#  - name: powershell
+#    description: Configure Japanese System Locale
+#    parameters:
+#      command: "Set-WinSystemLocale -SystemLocale ja-JP"
+#  - name: powershell
+#    description: Configure Japanese System Culture
+#    parameters:
+#      command: "Set-Culture -CultureInfo ja-JP"
+#  - name: powershell
+#    description: Configure Time Zone
+#    parameters:
+#      command: "Set-TimeZone -Id 'Tokyo Standard Time'"
+#  - name: powershell
+#    description: Configure Input Method
+#    parameters:
+#      command: "Set-WinDefaultInputMethodOverride -InputTip '0411:00000411'"
