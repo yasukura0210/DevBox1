@@ -33,8 +33,7 @@ tasks:
   - name: powershell
     description: Configure Japanese Language and UI Settings
     parameters:
-      command: "Set-WinUILanguageOverride -Language ja-JP; Set-WinUserLanguageList -
-LanguageList ja-JP -Force; Set-SystemPreferredUILanguage -Language ja-JP"
+      command: "Set-WinUILanguageOverride -Language ja-JP; Set-WinUserLanguageList - LanguageList ja-JP -Force; Set-SystemPreferredUILanguage -Language ja-JP"
   - name: powershell
     description: Configure Japanese System Locale and Culture
     parameters:
