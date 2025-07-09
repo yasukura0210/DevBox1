@@ -51,7 +51,6 @@ tasks:
     description: "タイムゾーンを日本標準時(東京)に設定"
     parameters:
       command: "Set-TimeZone -Id 'Tokyo Standard Time'"
-
 #  - name: powershell
 #    description: Configure Japanese Language and UI Settings
 #    parameters:
