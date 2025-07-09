@@ -1,0 +1,13 @@
+$schema: https://aka.ms/devbox-customization-schema
+name: development-environment-custom
+image: microsoftvisualstudio_visualstudioplustools_vs-2022-ent-general-win11-m365-gen2
+tasks:
+- name: winget
+  description: Install .NET SDK 8
+  parameters:
+    package: Microsoft.DotNet.SDK.8
+- name: powershell
+  description: Configure Japanese Language and UI Settings
+  parameters:
+    command: Set-WinUILanguageOverride -Language ja-JP; Set-WinUserLanguageList -LanguageList
+      ja-JP -Force; Set-SystemPreferredUILanguage -Language ja-JP
