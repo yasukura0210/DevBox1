@@ -26,52 +26,32 @@ tasks:
     description: Install Google Chrome
     parameters:
       package: Google.Chrome
-#  - name: powershell
-#    description: Install Japanese Language Pack
-#    timeout: 3600
-#    parameters:
-#      command: "Install-Language ja-JP -CopyToSettings"      
-#  - name: powershell
-#    description: "時刻・日付などの表示形式が言語リストに追従するよう設定"
-#    parameters:
-#      command: "Set-WinCultureFromLanguageListOptOut -OptOut $False"
-#  - name: powershell
-#    description: "デフォルトの入力方法を日本語IMEに変更"
-#    parameters:
-#      command: "Set-WinDefaultInputMethodOverride -InputTip '0411:00000411'"
-#  - name: powershell
-#    description: "システムロケールを日本 (ja-JP) に設定"
-#    parameters:
-#      command: "Set-WinSystemLocale -SystemLocale ja-JP"
-#  - name: powershell
-#    description: "ようこそ画面と新規ユーザーアカウントにも現在の国際設定をコピー"
-#    parameters:
-#      command: "Copy-UserInternationalSettingsToSystem -WelcomeScreen $True -NewUser $True"
-#  - name: powershell
-#    description: "タイムゾーンを日本標準時(東京)に設定"
-#    parameters:
-#      command: "Set-TimeZone -Id 'Tokyo Standard Time'"
-#  - name: powershell
-#    description: Configure Japanese Language and UI Settings
-#    parameters:
-#      command: "Set-WinUILanguageOverride -Language ja-JP; Set-WinUserLanguageList - LanguageList ja-JP -Force; Set-SystemPreferredUILanguage -Language ja-JP"
-#  - name: powershell
-#    description: Configure Language list as Japanese
-#    parameters:
-#      command: "Set-WinUserLanguageList -LanguageList ja-JP -Force"
-#  - name: powershell
-#    description: Configure Japanese System Locale
-#    parameters:
-#      command: "Set-WinSystemLocale -SystemLocale ja-JP"
-#  - name: powershell
-#    description: Configure Japanese System Culture
-#    parameters:
-#      command: "Set-Culture -CultureInfo ja-JP"
-#  - name: powershell
-#    description: Configure Time Zone
-#    parameters:
-#      command: "Set-TimeZone -Id 'Tokyo Standard Time'"
-#  - name: powershell
-#    description: Configure Input Method
-#    parameters:
-#      command: "Set-WinDefaultInputMethodOverride -InputTip '0411:00000411'"
+  - name: powershell
+    description: Install Japanese Language Pack
+    timeout: 3600
+    parameters:
+      command: "Install-Language ja-JP -CopyToSettings"      
+  - name: powershell
+    description: "デフォルトの入力方法を日本語IMEに変更"
+    parameters:
+      command: "Set-WinDefaultInputMethodOverride -InputTip '0411:00000411'"
+  - name: powershell
+    description: "システムロケールを日本 (ja-JP) に設定"
+    parameters:
+      command: "Set-WinSystemLocale -SystemLocale ja-JP"
+  - name: powershell
+    description: "タイムゾーンを日本標準時(東京)に設定"
+    parameters:
+      command: "Set-TimeZone -Id 'Tokyo Standard Time'"
+  - name: powershell
+    description: "時刻・日付などの表示形式が言語リストに追従するよう設定"
+    parameters:
+      command: "Set-WinCultureFromLanguageListOptOut -OptOut $False"
+  - name: powershell
+    description: "ようこそ画面と新規ユーザーアカウントにも現在の国際設定をコピー"
+    parameters:
+      command: "Copy-UserInternationalSettingsToSystem -WelcomeScreen $True -NewUser $True"
+  - name: powershell
+    description: "Restart VM"
+    parameters:
+      command: "Restart-Computer"
