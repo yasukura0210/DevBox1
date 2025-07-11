@@ -61,7 +61,7 @@ tasks:
   - name: powershell
     description: "デフォルトの入力方法を日本語IMEに変更"
     parameters:
-      command:　"Set-WinDefaultInputMethodOverride -InputTip \"0411:00000411\""
+      command: "Set-WinDefaultInputMethodOverride -InputTip \"0411:00000411\""
 
   - name: powershell
     description: "ようこそ画面と新規ユーザーアカウントにも現在の国際設定をコピー"
