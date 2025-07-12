@@ -1,5 +1,5 @@
 $schema: "1.0"
-name: "development-environment-custom-20250712-2"
+name: "development-environment-custom-20250712-3"
 image: microsoftvisualstudio_visualstudioplustools_vs-2022-ent-general-win11-m365-gen2
 tasks:
   - name: winget
@@ -43,15 +43,20 @@ tasks:
     parameters:
       command: "Set-WinCultureFromLanguageListOptOut -OptOut $False"
 
-  - name: powershell
-    description: "タイムゾーンを日本標準時(東京)に設定"
-    parameters:
-      command: "Set-TimeZone -id \"Tokyo Standard Time\""
+#  - name: powershell
+#    description: "タイムゾーンを日本標準時(東京)に設定"
+#    parameters:
+#      command: "Set-TimeZone -id \"Tokyo Standard Time\""
   
   - name: powershell
     description: "システムロケールを日本 (ja-JP) に設定"
     parameters:
       command: "Set-WinSystemLocale -SystemLocale ja-JP"
+
+  - name: powershell
+    description: "地域設定を日本に設定"
+    parameters:
+      command: "Set-WinHomeLocation -GeoId 122; Set-Culture ja-JP; Set-WinUserLanguageList ja-JP -Force"
 
   - name: powershell
     description: "ユーザーが使用する言語を日本語に設定"
